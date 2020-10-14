@@ -11,7 +11,13 @@ class App extends Component {
           <Suspense fallback={<h1>Loading...</h1>}>
             <Switch>
               {Routes.map((item) => {
-                return <Route path={item.path} component={item.component} />;
+                return (
+                  <Route
+                    exact={item.exact}
+                    path={item.path}
+                    component={item.component}
+                  />
+                );
               })}
             </Switch>
           </Suspense>
