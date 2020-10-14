@@ -8,7 +8,7 @@ const Header = ({ isAuthenticated }) => {
       <NavLink to="/" className={styles.HeaderLink} exact>
         <p className={styles.HeaderText}>About Me</p>
       </NavLink>
-      <NavLink to="/slills" className={styles.HeaderLink} exact>
+      <NavLink to="/skills" className={styles.HeaderLink} exact>
         <p className={styles.HeaderText}> My Skills </p>
       </NavLink>
       <NavLink to="/projects " className={styles.HeaderLink} exact>

@@ -1,7 +1,7 @@
 import React, { Component, Suspense } from "react";
-import { Switch } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 import Header from "./components/Header/Header";
-import Home from "./components/HomePage/HomePage";
+import Routes from "./routes";
 class App extends Component {
   render() {
     return (
@@ -10,7 +10,9 @@ class App extends Component {
           <Header />
           <Suspense fallback={<h1>Loading...</h1>}>
             <Switch>
-              <Home />
+              {Routes.map((item) => {
+                return <Route path={item.path} component={item.component} />;
+              })}
             </Switch>
           </Suspense>
         </div>
