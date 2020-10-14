@@ -3,8 +3,8 @@ import styles from "./Resume.module.css";
 
 const Resume = () => {
   return (
-    <div classNames={styles.home}>
-      <h1 classNames={styles.hometitle}> Resume</h1>
+    <div className={styles.home}>
+      <h1 className={styles.hometitle}> Resume</h1>
     </div>
   );
 };

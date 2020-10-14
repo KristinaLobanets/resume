@@ -13,6 +13,7 @@ class App extends Component {
               {Routes.map((item) => {
                 return (
                   <Route
+                    key={item.label}
                     exact={item.exact}
                     path={item.path}
                     component={item.component}

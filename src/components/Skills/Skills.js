@@ -3,8 +3,8 @@ import styles from "./Skills.module.css";
 
 const Skills = () => {
   return (
-    <div classNames={styles.home}>
-      <h1 classNames={styles.hometitle}>Skills</h1>
+    <div className={styles.home}>
+      <h1 className={styles.hometitle}>Skills</h1>
     </div>
   );
 };
