@@ -1,14 +1,14 @@
 .Header {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   background-color: rebeccapurple;
   height: 50px;
   margin-bottom: 30px;
 }
 
 .HeaderLink {
-  padding-left: 10px;
-  padding-right: 10px;
+  padding-left: 40px;
+  padding-right: 40px;
 }
 
 .HeaderText {

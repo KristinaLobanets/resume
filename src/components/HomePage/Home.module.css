@@ -7,3 +7,13 @@
   text-align: center;
   text-transform: uppercase;
 }
+
+.homename {
+}
+
+.homephoto {
+  background-image: url(../../images/kris.jpg);
+  width: 100%;
+  height: 50px;
+  margin-bottom: 29px;
+}

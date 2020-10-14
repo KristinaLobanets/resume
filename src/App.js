@@ -1,16 +1,8 @@
 import React, { Component, Suspense } from "react";
 import { Switch } from "react-router-dom";
 import Header from "./components/Header/Header";
-import { connect } from "react-redux";
-import authOperation from "./redux/taskOperations/authOperation";
-import routes from "./routes";
-import PrivateRoute from "./components/PrivateRoute";
-import PublicRoute from "./components/PublicRoute";
-
+import Home from "./components/HomePage/HomePage";
 class App extends Component {
-  componentDidMount() {
-    this.props.onGetCurrentUser();
-  }
   render() {
     return (
       <>
@@ -18,17 +10,7 @@ class App extends Component {
           <Header />
           <Suspense fallback={<h1>Loading...</h1>}>
             <Switch>
-              {routes.map((route) =>
-                route.private ? (
-                  <PrivateRoute key={route.label} {...route} />
-                ) : (
-                  <PublicRoute
-                    key={route.label}
-                    {...route}
-                    restricted={route.restricted}
-                  />
-                )
-              )}
+              <Home />
             </Switch>
           </Suspense>
         </div>
@@ -37,6 +19,4 @@ class App extends Component {
   }
 }
 
-const mapDispatchToProps = { onGetCurrentUser: authOperation.getCurrentUser };
-
-export default connect(null, mapDispatchToProps)(App);
+export default App;
