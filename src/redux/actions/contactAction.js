@@ -1,22 +1,44 @@
 import { createAction } from "@reduxjs/toolkit";
-import { v4 as uuidv4 } from "uuid";
-import {
-  ADD_CONTACT,
-  DELETE_CONTACT,
-  CONTACT_FILTER,
-} from "../constans/contactConstants.js";
+// import { v4 as uuidv4 } from "uuid";
 
-const addContact = createAction(ADD_CONTACT, (taskName, taskPhone) => ({
-  payload: { contacts: { name: taskName, number: taskPhone, id: uuidv4() } },
-}));
+// const addContact = createAction(ADD_CONTACT, (taskName, taskPhone) => ({
+//   payload: { contacts: { name: taskName, number: taskPhone, id: uuidv4() } },
+// }));
 
-const deleteContact = createAction(DELETE_CONTACT);
+const addContactRequest = createAction("@contacts/addRequest");
 
-const searchContact = createAction(CONTACT_FILTER);
+const addContactError = createAction("@contacts/addError");
+
+const addContactSuccess = createAction("@contacts/addSuccess");
+
+const deleteContactRequest = createAction("@contacts/deleteRequest");
+
+const deleteContactError = createAction("@contacts/deleteError");
+
+const deleteContactSuccess = createAction("@contacts/deleteSuccess");
+
+const getContactRequest = createAction("@contacts/getRequest");
+
+const geteContactError = createAction("@contacts/getError");
+
+const getContactSuccess = createAction("@contacts/getSuccess");
+
+const searchContact = createAction("@contact/filterContact");
 
 // const removeTask = (taskid) => ({
 //   type: DELETE_CONTACT,
 //   payload: { id: taskid },
 // });
 
-export default { addContact, deleteContact, searchContact };
+export default {
+  addContactRequest,
+  addContactError,
+  addContactSuccess,
+  deleteContactRequest,
+  deleteContactError,
+  deleteContactSuccess,
+  getContactRequest,
+  geteContactError,
+  getContactSuccess,
+  searchContact,
+};

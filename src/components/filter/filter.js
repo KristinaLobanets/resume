@@ -2,6 +2,7 @@ import React from "react";
 import styles from "./filter.module.css";
 import { connect } from "react-redux";
 import contactAction from "../../redux/actions/contactAction";
+import contactSelector from "../../redux/contactSelector/contactSelector";
 
 const Filter = ({ filter, onSearchContact }) => {
   return (
@@ -19,7 +20,9 @@ const Filter = ({ filter, onSearchContact }) => {
   );
 };
 
-const mapStateToProps = (state) => ({ filter: state.tasks.filter });
+const mapStateToProps = (state) => ({
+  filter: contactSelector.filterSelector(state),
+});
 const mapDispatchToProps = { onSearchContact: contactAction.searchContact };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Filter);

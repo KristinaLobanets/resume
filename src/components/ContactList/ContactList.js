@@ -3,7 +3,8 @@ import styles from "../ContactList/ContactList.module.css";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
 import fadeContact from "./fadeContact.module.css";
 import { connect } from "react-redux";
-import contactAction from "../../redux/actions/contactAction";
+import taskOperations from "../../redux/taskOperations/taskOperations";
+import contactSelector from "../../redux/contactSelector/contactSelector";
 
 const Contacts = ({ contacts, onRemove }) => {
   return (
@@ -38,10 +39,8 @@ const Contacts = ({ contacts, onRemove }) => {
 };
 
 const mapStateToProps = (state) => ({
-  contacts: state.tasks.contacts.filter((item) =>
-    item.name.toLowerCase().includes(state.tasks.filter.toLowerCase())
-  ),
+  contacts: contactSelector.visibleContactSelector(state),
 });
-const mapDispatchToProps = { onRemove: contactAction.deleteContact };
+const mapDispatchToProps = { onRemove: taskOperations.deleteContact };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Contacts);

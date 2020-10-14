@@ -1,0 +1,9 @@
+.home {
+  display: block;
+}
+
+.hometitle {
+  color: #242424;
+  text-align: center;
+  text-transform: uppercase;
+}
